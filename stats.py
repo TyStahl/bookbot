@@ -14,3 +14,13 @@ def get_char_count(booktext):
             char_count[text_lower[i]] += 1 
     return char_count
 
+def get_dict_report(dictionary):
+    report = []
+    for key in dictionary:
+        if key.isalpha():
+            report.append({"char":key, "num": dictionary[key]})
+    def sort_on(dictionary):
+        return dictionary["num"]
+    report.sort(reverse=True, key=sort_on)
+    return report
+
